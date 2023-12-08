@@ -4,6 +4,5 @@ def uniq_add(my_list=[]):
     for n in my_list:
         if isinstance(n, int):
             uniq_integers.add(n)
-            sum_uniq_integers = sum(uniq_integers)
-            return sum_uniq_integers
-
+    sum_uniq_integers = sum(uniq_integers)
+    return sum_uniq_integers
