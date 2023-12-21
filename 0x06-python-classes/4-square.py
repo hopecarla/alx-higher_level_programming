@@ -10,7 +10,7 @@ class Square:
         """Initializes a new instance of the Square class.
 
         Args:
-        size (int): The size of the square, default is 0.
+         size (int): The size of the square, default is 0.
 
         """
         self.__size = size
@@ -29,7 +29,7 @@ class Square:
                 raise ValueError("size must be >= 0")
             self.__size = value
 
-            def area(self):
+        def area(self):
                 """Calculate and return the area of the square."""
                 return self.__size ** 2
 
