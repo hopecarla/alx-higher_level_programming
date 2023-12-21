@@ -10,8 +10,7 @@ class Square:
         """Initializes a new instance of the Square class.
 
         Args:
-         size (int): The size of the square, default is 0.
-
+            size (int): The size of the square, default is 0.
         """
         self.__size = size
 
