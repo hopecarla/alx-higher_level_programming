@@ -1,45 +1,45 @@
 #!/usr/bin/python3
 
-""""Defines a class Rectangle."""
+"""Defines a class Rectangle."""
 
 
 class Rectangle:
-"""A class that defines a rectangle
+    """A class that defines a rectangle
 
-Attributes:
-width (int): The width of the rectangle.
-height (int): The height of the rectangle.
-"""
+    Attributes:
+    width (int): The width of the rectangle.
+    height (int): The height of the rectangle.
+    """
 
-def__init__(self, width=0, height=0):
-    """Initializes a new rectangle with the given width and height."""
-self.width = width
-self.height = height
+    def__init_(self, width=0, height=0):
+        """Initializes a new rectangle with the given width and height."""
+        self.width = width
+        self.height = height
 
-@property
-def width(self):
-"""Getter method to retrieve the width of the rectangle."""
-return self.__width
+    @property
+    def width(self):
+        """Getter method to retrieve the width of the rectangle."""
+        return self.__width
 
-@width.setter
-def width(self, value):
-"""Setter method to set the width of the rectangle."""
-if not isinstance(value, int):
-raise  TypeError("width must be an integer")
-if value < 0:
-raise ValueError("width must be >= 0")
-self.__width = value
+    @width.setter
+    def width(self, value):
+        """Setter method to set the width of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
-@property
-def height(self):
-"""Getter method to retrieve the height of the rectangle."""
-return self._height
+    @property
+    def height(self):
+        """Getter method to retrieve the height of the rectangle."""
+        return self.__height
 
-@height.setter
-def height(self, value):
-"""Setter method to set the height of the rectangle."""
-if not isinstance(value, int):
-raise TypeError("height must be an integer")
-if value < 0:
-raise ValueError("height must be >= 0")
-self._height = value
+    @height.setter
+    def height(self, value):
+        """Setter method to set the height of the rectangle."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
