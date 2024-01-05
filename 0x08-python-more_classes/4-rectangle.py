@@ -60,8 +60,8 @@ class Rectangle:
         rect_str = ""
         for _ in range(self.height):
             rect_str += "#" * self.width + "\n"
-        return rect_str[:1]
+        return rect_str[:-1]
 
     def __repr__(self):
         """Returns a string representation of the rectangle for recreation."""
-        return f"Rectangle({self.width}, {self.height})
+        return f"Rectangle({self.width}, {self.height})"
