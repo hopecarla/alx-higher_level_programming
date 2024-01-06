@@ -5,7 +5,7 @@
 
 
 class Rectangle:
-    """This class defines a rectangle with width and and height attributes."""
+    """This class defines a rectangle with width and height attributes."""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -14,23 +14,23 @@ class Rectangle:
         """Initializes a new Rectangle with the specified width and height.
 
         Args:
-            width (int, optional): The width of the Rectangle. Defaults to 0.
-            height (int, optional): The height of the Rectangle. Defaults to 0.
+            width (int, optional): The width of the rectangle. Defaults to 0.
+            height (int, optional): The height of the rectangle. Defaults to 0.
         """
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
 
     @property
-    def width(Self):
+    def width(self):
         """Getter method to retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter method to set the width of the recatngle."""
+        """Setter method to set the width of the rectangle"""
         if not isinstance(value, int):
-            raise TypeError("width must  be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
@@ -42,7 +42,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Setter method to set the height of the rectangle"""
+        """Setter method to set the height of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -54,7 +54,7 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        """Calculates and returns the perimeter of the rectangle"""
+        """Calculates and returns the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
     def __str__(self):
@@ -64,10 +64,10 @@ class Rectangle:
         rect_str = ""
         for _ in range(self.height):
             rect_str += str(self.print_symbol) * self.width + "\n"
-            return rect_str[:-1]
+        return rect_str[:-1]
 
     def __repr__(self):
-        """Returns a string representation of the rectangle."""
+        """Returns a string representation of the rectangle"""
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
