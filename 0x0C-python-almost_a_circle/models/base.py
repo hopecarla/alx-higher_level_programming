@@ -1,22 +1,22 @@
 #!/usr/bin/python3
 """Defines a base model class."""
 import json
-import cvs
+import csv
 import turtle
 
 
 class Base:
-    """Base model.
+    """Represent the base model.
 
-    This Represents the "base" for all other classes in project 0x0C*.
+    Represents the "base" for all other classes in project 0x0C*.
 
-    Private Class Attributes:
-        __nb_object (int): Number of instantiated Bases.
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
     """
 
     __nb_objects = 0
 
-    def __init__self(self, id=None):
+    def __init__(self, id=None):
         """Initialize a new Base.
 
         Args:
@@ -29,7 +29,7 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to__json_string(list_dictionaries):
+    def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
 
         Args:
@@ -52,10 +52,10 @@ class Base:
                 jsonfile.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
-                jsonfile.write(Base.to__json_string(list_dicts))
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
-    def from__json_string(json_string):
+    def from_json_string(json_string):
         """Return the deserialization of a JSON string.
 
         Args:
@@ -64,7 +64,7 @@ class Base:
             If json_string is None or empty - an empty list.
             Otherwise - the Python list represented by json_string.
         """
-        if json_string is None or json_string = "[]":
+        if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
 
@@ -90,13 +90,13 @@ class Base:
         Reads from `<cls.__name__>.json`.
 
         Returns:
-           If the file does not exist - an empty llist
-           Otherwise - a list of instantiated classes.
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as jsonfile:
-                list_dicts = Base.from__json_string(jsonfile.read())
+                list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
@@ -114,10 +114,10 @@ class Base:
                 csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
-                    fieldnames = ["id", "width", "height",  "x", "y"]
+                    fieldnames = ["id", "width", "height", "x", "y"]
                 else:
                     fieldnames = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(csvfile, fieldnames=filednames)
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
 
@@ -128,7 +128,7 @@ class Base:
         Reads from `<cls.__name__>.csv`.
 
         Returns:
-            If the file does not exist - an empty list
+            If the file does not exist - an empty list.
             Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
@@ -151,7 +151,7 @@ class Base:
 
         Args:
             list_rectangles (list): A list of Rectangle objects to draw.
-            list_squares (list): Alist of Square objects to draw.
+            list_squares (list): A list of Square objects to draw.
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")

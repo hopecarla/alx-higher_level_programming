@@ -31,7 +31,7 @@ class Square(Rectangle):
         """Update the Square.
 
         Args:
-            *args (ints): New attribute values
+            *args (ints): New attribute values.
                 - 1st argument represents id attribute
                 - 2nd argument represents size attribute
                 - 3rd argument represents x attribute
