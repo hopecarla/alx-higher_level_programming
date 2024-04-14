@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
-"""Defines a class Rectangle
+"""Defines a class Rectangle."""
 
 
-class Rectngle:
+class Rectangle:
 """A class that defines a rectangle
 
-Attributes:
+Attribures:
 width (int): The width of the rectangle.
 height (int): The height of the rectangle.
 """
@@ -37,7 +37,7 @@ return self.__height
 
 @height.setter
 def height(self, value):
-"""Setter method to set the height of the rectangle"""
+"""Setter method to set the height of the rectangle."""
 if not isinstance(value, int):
 raise TypeError("height must be an integer")
 if value < 0:
